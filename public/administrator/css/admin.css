@@ -1,0 +1,151 @@
+.help-block-admin{
+    color: red;
+}
+
+.noResize {
+    resize: none;
+}
+
+.pageInner{
+    padding: 15px;
+}
+
+.pageInner .editAvatar{
+    height: 300px;
+    width: 300px;
+    margin: 0 auto;
+    border-radius: 100%;
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center top;
+}
+
+.pageInner .info-block{
+    position: relative;
+    /*background-color: white;*/
+    padding: 15px;
+    margin-top: 10px;
+    /*-webkit-box-shadow: -1px 2px 15px 0px rgba(0,0,0,0.75);*/
+    /*-moz-box-shadow: -1px 2px 15px 0px rgba(0,0,0,0.75);*/
+    /*box-shadow: -1px 2px 15px 0px rgba(0,0,0,0.75);*/
+}
+
+.pageInner .info-block .info-head{
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    color: gray;
+}
+
+.pageInner .info-block .info-head:before,
+.pageInner .info-block .info-head:after{
+    content: '';
+    position: absolute;
+    width: 20%;
+    border-top: 3px solid gray;
+    top: 6px;
+}
+
+.pageInner .info-block .info-head:before{
+    left: 29px;
+}
+
+.pageInner .info-block .info-head:after{
+    right: 29px;
+}
+
+
+.pageInner .info-block:hover label,
+.pageInner .info-block input:focus,
+.pageInner .info-block:hover .info-head,
+.pageInner .info-block:hover .info-head:before,
+.pageInner .info-block:hover .info-head:after{
+    border-color: #3c8dbc;
+    color: #3c8dbc;
+    transition: 1s;
+}
+
+.pageInner table .avatar-table{
+    display: block;
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center top;
+}
+
+.pageInner .nav-tabs .flag-img {
+    display: block;
+    margin: 5px;
+    height: 50px;
+    width: 50px;
+    background-color: transparent;
+    border-radius: 100%;
+    border: 5px solid;
+    border-color: transparent;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+}
+
+.pageInner .nav-tabs .active .flag-img,
+.pageInner .nav-tabs .flag-img:hover,
+.pageInner .nav-tabs .active .flag-img:hover
+{
+    background-color: transparent;
+    border-color: white;
+}
+
+
+
+.chat .chat-list .item{
+    margin-top: 10px;
+}
+
+.chat .chat-list .item p{
+    margin: 0;
+}
+
+.chat .chat-list .item .time-ago{
+    font-size: 9px;
+    margin: 0;
+}
+
+.chat a.avatar{
+    display: block;
+    height: 50px;
+    width: 50px;
+    margin-top: 5px;
+    background-color: transparent;
+    border-radius: 100%;
+    border-color: transparent;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+}
+
+.user-panel .image a.avatar{
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+}
+.sidebar-collapse .user-panel .image a.avatar{
+    width: 30px;
+    height: 30px;
+}
+
+.user-header .avatar{
+    display: block;
+    width: 90px;
+    height: 90px;
+    margin: 0 auto;
+    border-radius: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+}
