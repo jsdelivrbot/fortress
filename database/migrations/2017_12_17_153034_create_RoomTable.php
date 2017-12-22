@@ -16,8 +16,15 @@ class CreateRoomTable extends Migration
         Schema::create('room', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('first_user')->unsigned();
-            $table->integer('second_user');
+            $table->integer('second_user')->unsigned();
 
+
+            $table->foreign('first_user')
+                ->references('id')->on('administrators')
+                ->onDelete('cascade');
+            $table->foreign('second_user')
+                ->references('id')->on('administrators')
+                ->onDelete('cascade');
 //            $table->foreign('first_user')->references('id')->on('administrators');
 
         });

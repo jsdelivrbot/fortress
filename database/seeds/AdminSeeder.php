@@ -19,9 +19,9 @@ class AdminSeeder extends Seeder
                 'name'        => 'Іван',
                 'surname'     => 'Войтович',
                 'avatar'      => 'administrator/avatars/owner.jpg',
-                'email'       => '',
+                'email'       => 'ivan@gmail.com',
                 'super_admin' => 1,
-                'password'    => Hash::make('')
+                'password'    => Hash::make('azerate23')
 
             ],
 

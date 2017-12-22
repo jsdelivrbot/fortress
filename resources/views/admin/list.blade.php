@@ -43,7 +43,7 @@
                             <tr>
 
                                 <td>
-                                    <a href="{{route('edit.profile',['id' => $admin['id']])}}" class="avatar-table" style="background-image: url({{$admin['avatar']}})">
+                                    <a href="{{route('profile',['id' => $admin['id']])}}" class="avatar-table" style="background-image: url({{$admin['avatar']}})">
 
                                     </a>
                                 </td>

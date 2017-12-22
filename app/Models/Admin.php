@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Support\Carbon;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Auth;
 
 class Admin extends Authenticatable
 {
@@ -28,12 +29,6 @@ class Admin extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-
-    //RELATIONS
-//    public function room()
-//    {
-//        return $this->belongsTo(Room::class);
-//    }
 
     //MUTATORS
     public function getTimeAgoAttribute()

@@ -10,11 +10,16 @@ Route::post('/','AdminController@index')
 Route::get('/list', 'AdminController@show')
     ->name('admins.list');
 
-Route::get('/create', 'AdminController@form')
-    ->name('admin.form.create');
 
-Route::post('/create', 'AdminController@create')
-    ->name('admin.create');
+Route::group(['middleware' => 'superAdmin'], function () {
+
+    Route::get('/create', 'AdminController@form')
+        ->name('admin.form.create');
+
+    Route::post('/create', 'AdminController@create')
+        ->name('admin.create');
+
+});
 
 Route::prefix('profile')->group(function () {
 
@@ -22,17 +27,26 @@ Route::prefix('profile')->group(function () {
         ->where('id', '[0-9]+')
         ->name('look.profile');
 
-    Route::get('/{id}', 'ProfileController@edit')
+    Route::get('/{id?}', 'ProfileController@edit')
         ->where('id', '[0-9]+')
         ->name('profile');
 
-    Route::post('/{id}', 'ProfileController@update')
-        ->where('id', '[0-9]+')
-        ->name('edit.profile');
+    Route::post('/edit/avatar', 'ProfileController@updateAvatar')
+        ->name('profile.update.avatar');
 
-    Route::post('/destroy/{id}', 'ProfileController@destroy')
-        ->where('id', '[0-9]+')
-        ->name('destroy.profile');
+    Route::post('/edit/info', 'ProfileController@updateInfo')
+        ->name('profile.update.info');
+
+    Route::post('/edit/password', 'ProfileController@updatePassword')
+        ->name('profile.update.password');
+
+    Route::group(['middleware' => 'superAdmin'], function () {
+
+        Route::post('/destroy/{id}', 'ProfileController@destroy')
+            ->where('id', '[0-9]+')
+            ->name('destroy.profile');
+
+    });
 });
 
 Route::prefix('content')->group(function () {
@@ -71,8 +85,18 @@ Route::prefix('content')->group(function () {
 
 Route::prefix('chat')->group(function () {
 
-    Route::get('/{id}','ChatController@index')
+    Route::get('/','ChatController@index')->name('chat');
+
+    Route::get('/find/{id}','ChatController@findChat')
         ->where('id', '[0-9]+')
-        ->name('chat');
+        ->name('chat.find');
+
+    Route::get('/{id}','ChatController@dialog')
+        ->where('id', '[0-9]+')
+        ->name('dialog');
+
+    Route::post('/{id}','ChatController@message')
+        ->where('id', '[0-9]+')
+        ->name('message');
 
 });

@@ -3,7 +3,12 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Admin;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Auth;
+
 
 class LoginController extends Controller
 {
@@ -37,5 +42,20 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
 
 
+    }
+
+    public function logout(Request $request)
+    {
+        $admin = Admin::find(Auth::user()->id);
+        $admin->last_visited = Carbon::now();
+        $admin->save();
+
+        $this->guard()->logout();
+
+        $request->session()->flush();
+
+        $request->session()->regenerate();
+
+        return redirect('/');
     }
 }

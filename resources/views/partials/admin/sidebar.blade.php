@@ -27,7 +27,13 @@
         <ul class="sidebar-menu tree" data-widget="tree">
             <li class="header">MAIN NAVIGATION</li>
 
+            <li class="">
+                <a href="{{route('chat')}}">
+                    <i class="fa fa-user-circle"></i>
+                    <span>Месенджер</span>
 
+                </a>
+            </li>
 
             <li class="treeview">
                 <a href="#">
